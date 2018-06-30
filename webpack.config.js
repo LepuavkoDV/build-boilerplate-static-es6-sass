@@ -30,7 +30,7 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        test: /\.(woff(2)?|ttf|eot|svg|png|jpg|jpeg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader',
         query: {
           name: '[path][name].[ext]',
