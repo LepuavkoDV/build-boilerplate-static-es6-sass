@@ -42,7 +42,7 @@ module.exports = {
     extensions: ['.js', '.es6'],
   },
   output: {
-    path: __dirname + '/build/assets',
+    path: __dirname + '/build',
     filename: 'main.js',
   },
   devServer: {
