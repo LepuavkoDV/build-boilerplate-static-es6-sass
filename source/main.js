@@ -1,6 +1,6 @@
 // import $ from 'jquery'; Before using jQuery, install it with `npm install --save jquery`
 import 'normalize.css'; // Note this
-import './style/main.scss';
+import './scss/main.scss';
 
 const saySomething = (something) => {
   console.log(something); // eslint-disable-line no-console

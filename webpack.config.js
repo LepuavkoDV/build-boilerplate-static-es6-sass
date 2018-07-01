@@ -1,19 +1,18 @@
 require('webpack');
 const WebpackBar = require('webpackbar');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const processHTMLPages = require('./processHTMLHelper.js');
 
-const extractCSS = new ExtractTextPlugin('style.css');
+const extractCSS = new ExtractTextPlugin('main.css');
 const ProgressBar = new WebpackBar();
 const plugins = [
   ProgressBar,
   extractCSS,
-].concat(processHTMLPages());
+];
 
 module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
-    './source/index.js'
+    './source/main.js'
   ],
   module: {
     rules: [
@@ -43,8 +42,8 @@ module.exports = {
     extensions: ['.js', '.es6'],
   },
   output: {
-    path: __dirname + '/build',
-    filename: 'index.js',
+    path: __dirname + '/build/assets',
+    filename: 'main.js',
   },
   devServer: {
     contentBase: './source'

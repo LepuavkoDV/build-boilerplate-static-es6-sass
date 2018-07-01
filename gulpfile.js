@@ -8,3 +8,8 @@ gulp.task('images', () => {
     .pipe(ifElse(argv.compress, () => imagemin()))
     .pipe(gulp.dest('build/images'));
 });
+
+gulp.task('copy', function () {
+  gulp.src('source/index.html')
+      .pipe(gulp.dest('build/'));
+});
