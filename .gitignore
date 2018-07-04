@@ -12,3 +12,6 @@ npm-debug.log
 #phpstorm
  .idea/workspace.xml
  .idea
+
+# npm
+package-lock.json
