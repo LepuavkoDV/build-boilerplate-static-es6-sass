@@ -10,6 +10,6 @@ gulp.task('images', () => {
 });
 
 gulp.task('copy', function () {
-  gulp.src('source/index.html')
+  gulp.src('source/**/*.html')
       .pipe(gulp.dest('build/'));
 });
