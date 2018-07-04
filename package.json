@@ -25,7 +25,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode=development",
+    "start": "webpack-dev-server --open --mode=development",
     "prebuild": "rm -rf build",
     "build": "webpack -p",
     "postbuild": "gulp images --compress && gulp copy"
