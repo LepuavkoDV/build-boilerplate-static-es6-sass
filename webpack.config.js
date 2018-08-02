@@ -2,11 +2,20 @@ require('webpack');
 const WebpackBar = require('webpackbar');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
+
 const extractCSS = new ExtractTextPlugin('main.css');
 const ProgressBar = new WebpackBar();
+const html = new HtmlWebpackPlugin({
+  template: './source/index.html',
+  filename: 'index.html',
+  inject: 'body',
+});
 const plugins = [
   ProgressBar,
   extractCSS,
+  html
 ];
 
 module.exports = {
@@ -42,11 +51,12 @@ module.exports = {
     extensions: ['.js', '.es6'],
   },
   output: {
-    path: __dirname + '/build',
-    filename: 'main.js',
+    path: path.resolve(__dirname, './build'),
+    filename: 'main.js'
   },
   devServer: {
-    contentBase: './source'
+    contentBase: './source',
+    watchContentBase: true
   },
   plugins,
 };
